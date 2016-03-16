@@ -1,0 +1,66 @@
+<link rel="import" href="elements.html">
+
+<!--
+`<uqlibrary-autosuggest-input>` is a simple element that displays search functionality of UQ Library
+
+Example:
+
+  <uqlibrary-autosuggest-input label="search library..." on-activated="performSearch"></uqlibrary-autosuggest-input>
+
+@demo
+
+@demo demo/index.html Demo of uqlibrary-autosuggest-input
+-->
+<dom-module id="uqlibrary-autosuggest-input">
+  <template>
+    <style is="custom-style" include="common-styles">
+      :host {
+        font-family: var(--font-family);
+        font-size: var(--body-font-size);
+        position: relative;
+        display: block;
+      }
+
+      #menuSuggestions {
+        border-radius: 3px;
+        @apply(--shadow-elevation-2dp);
+        width: 99%
+      }
+
+      .recent-search {
+        color: var(--theme-color);
+      }
+
+      paper-item {
+        border-bottom: 1px solid var(--secondary-color-light);
+        cursor: pointer;
+      }
+
+    </style>
+
+    <iron-a11y-keys target="[[_inputKeywordTarget]]" keys="enter" on-keys-pressed="_activated"></iron-a11y-keys>
+    <iron-a11y-keys target="[[_inputKeywordTarget]]" keys="tab" on-keys-pressed="_closeSuggestions"></iron-a11y-keys>
+    <iron-a11y-keys target="[[_inputKeywordTarget]]" keys="down" on-keys-pressed="_selectFirstItem"></iron-a11y-keys>
+
+    <iron-a11y-keys target="[[_suggestionsTarget]]" keys="tab" on-keys-pressed="_closeSuggestions"></iron-a11y-keys>
+
+    <paper-input id="inputKeyword" label="[[label]]" value="{{keyword}}" on-focus="_keywordFocused" on-tap="_keywordFocused">
+    </paper-input>
+
+    <uqlibrary-iron-dropdown id="menuSuggestions" no-auto-focus="true"
+                             horizontal-align="left" vertical-align="top" position-absolute="true"
+                             horizontal-offset="3" vertical-offset="60" tabindex="-1">
+
+      <paper-listbox id="listSuggestions" on-iron-activate="_suggestionSelected" class="dropdown-content" no-auto-focus="true" tabindex="-1">
+        <template is="dom-repeat" items="{{suggestions}}">
+          <paper-item tabindex="-1" class$="{{_recentSearchClass(item.recent)}} " no-auto-focus="true"> [[item.name]] </paper-item>
+        </template>
+      </paper-listbox>
+
+    </uqlibrary-iron-dropdown>
+
+  </template>
+
+  <script src="uqlibrary-autosuggest-input.js"></script>
+
+</dom-module>
