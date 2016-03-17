@@ -76,8 +76,6 @@
     },
 
     _suggestionsChanged: function () {
-      console.log(this.suggestions);
-
       this.async(function () {
         if (this.suggestions && this.suggestions.length > 0) {
           if (!this.$.menuSuggestions.opened)
