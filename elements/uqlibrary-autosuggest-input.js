@@ -65,6 +65,7 @@
         this.$.menuSuggestions.close();
       } else if (this.suggestions && this.suggestions.length > 0) {
         this.$.menuSuggestions.open();
+        this.fire('focus');
       }
     },
 
@@ -78,8 +79,10 @@
     _suggestionsChanged: function () {
       this.async(function () {
         if (this.suggestions && this.suggestions.length > 0) {
-          if (!this.$.menuSuggestions.opened)
+          if (!this.$.menuSuggestions.opened){
             this.$.menuSuggestions.open();
+            this.fire('focus');
+          }
         }
         else
           this.$.menuSuggestions.close();
