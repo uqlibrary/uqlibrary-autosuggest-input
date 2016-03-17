@@ -1,8 +1,8 @@
-# uqlibrary-search
+# uqlibrary-autosuggest-input
 
-uqlibrary-search is a simple list view showing opening search for all libraries at the University of Queensland. 
+uqlibrary-autosuggest-input is an input field with autosuggest display 
 
-Full documentation can be found at [GitHub Pages](http://uqlibrary.github.io/uqlibrary-search).
+Full documentation can be found at [GitHub Pages](http://uqlibrary.github.io/uqlibrary-autosuggest-input).
 
 ### Getting Started
 Install Node.JS and run the following oneliner in the project directory:

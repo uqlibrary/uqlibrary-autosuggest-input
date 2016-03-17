@@ -13,7 +13,7 @@ REPO="$(basename `git rev-parse --show-toplevel`)";
 ORG="uqlibrary";
 
 # Get branch
-BRANCH=${1:-"polymer1.0"}
+BRANCH=${1:-"master"}
 
 # Make temporary dir and GIT clone
 rm -rf "../tmp/$REPO";
