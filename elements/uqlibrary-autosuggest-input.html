@@ -44,16 +44,18 @@ Example:
 
     <iron-a11y-keys target="[[_suggestionsTarget]]" keys="tab" on-keys-pressed="_closeSuggestions"></iron-a11y-keys>
 
-    <paper-input id="inputKeyword" label="[[label]]" value="{{keyword}}" on-focus="_keywordFocused" on-tap="_keywordFocused">
+    <paper-input id="inputKeyword" aria-label="[[label]]" label="[[label]]"
+                 value="{{keyword}}" on-focus="_keywordFocused" on-tap="_keywordFocused">
     </paper-input>
 
     <uqlibrary-iron-dropdown id="menuSuggestions" no-auto-focus="true"
-                             horizontal-align="left" vertical-align="top" position-absolute="true"
+                             horizontal-align="left" vertical-align="top" position-absolute="true" title="Select autosuggested item"
                              horizontal-offset="3" vertical-offset="60" tabindex="-1">
 
-      <paper-listbox id="listSuggestions" on-iron-activate="_suggestionSelected" class="dropdown-content" no-auto-focus="true" tabindex="-1">
+      <paper-listbox id="listSuggestions" on-iron-activate="_suggestionSelected" class="dropdown-content"
+                     no-auto-focus="true" tabindex="-1" aria-label="Select autosuggested item" role="combobox" title="Select autosuggested item">
         <template is="dom-repeat" items="{{suggestions}}">
-          <paper-item tabindex="-1" class$="{{_recentSearchClass(item.recent)}} " no-auto-focus="true"> [[item.name]] </paper-item>
+          <paper-item tabindex="-1" class$="{{_recentSearchClass(item.recent)}} " no-auto-focus="true" role="option"> [[item.name]] </paper-item>
         </template>
       </paper-listbox>
 
