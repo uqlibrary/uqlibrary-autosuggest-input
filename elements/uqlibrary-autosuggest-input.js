@@ -97,6 +97,7 @@
 
     _suggestionSelected: function (e) {
       this.selectedSuggestion = this.suggestions[e.detail.selected];
+      this.keyword = this.selectedSuggestion.name;
       this._activated();
     },
 
