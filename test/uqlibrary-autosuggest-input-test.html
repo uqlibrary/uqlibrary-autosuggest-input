@@ -93,6 +93,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             });
         });
 
+        test('Clear input box', function (done) {
+            flush(function () {
+
+                var inputKeyword = testObj.querySelector('#inputKeyword');
+
+                inputKeyword.value = 'timmy';
+                testObj.clear();
+                expect(inputKeyword.value).to.equal('');
+                done();
+            });
+        });
+
     });
 </script>
 

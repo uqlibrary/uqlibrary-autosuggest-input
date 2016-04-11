@@ -126,6 +126,13 @@
       this.$.inputKeyword.focus();
     },
 
+    /**
+     * Removes the field value
+     */
+    clear: function() {
+      this.$.inputKeyword.value = '';
+    },
+
     ready: function() {
     }
 
