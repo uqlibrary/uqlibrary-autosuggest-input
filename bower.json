@@ -12,9 +12,9 @@
     "polymer": "Polymer/polymer#^1.2.0",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
-    "uqlibrary-styles": "uqlibrary/uqlibrary-styles#master",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "uqlibrary-iron-dropdown": "uqlibrary/uqlibrary-iron-dropdown#master"
+    "uqlibrary-styles": "uqlibrary/uqlibrary-styles#v1.0.0",
+    "uqlibrary-iron-dropdown": "uqlibrary/uqlibrary-iron-dropdown#v1.2.1"
   },
   "devDependencies": {
     "web-component-tester": "*",
