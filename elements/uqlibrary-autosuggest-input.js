@@ -89,16 +89,20 @@
       }, 100);
     },
 
-    _activated: function(e) {
+    _activated: function(e, suggestion) {
       this.$.menuSuggestions.close();
+      if (suggestion && !this.selectedSuggestion) {
+        this.selectedSuggestion = suggestion;
+      }
       this.fire('activated', this.selectedSuggestion ? this.selectedSuggestion : this.keyword);
       this.suggestions = [];
     },
 
     _suggestionSelected: function (e) {
-      this.selectedSuggestion = this.suggestions[e.detail.selected];
-      this.keyword = this.selectedSuggestion.name;
-      this._activated();
+      var selectedSuggestion = this.suggestions[e.detail.selected];
+      this.keyword = selectedSuggestion.name;
+
+      this._activated(null, selectedSuggestion);
     },
 
     _selectFirstItem: function (e) {

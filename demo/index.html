@@ -29,7 +29,7 @@
         var input = document.querySelector('uqlibrary-autosuggest-input');
 
         input.addEventListener('activated', function (e) {
-            document.querySelector('#selected').innerHTML = (e.detail.name ? "Selected suggestion: " + e.detail.name : "Activated text: " + e.detail);
+            document.querySelector('#selected').innerHTML = e.detail.name; //(e.detail.name ? "Selected suggestion: " + e.detail.name : "Activated text: " + e.detail);
         });
 
         input.addEventListener('keyword-changed', function (e) {

@@ -35,6 +35,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     suite('<uqlibrary-autosuggest-input> tests', function () {
         var testObj;
 
+        var suggestions = [
+            { name: "abc 1", url: "http://abc1", recent: true },
+            { name: "abc 2", url: "http://abc2", recent: true },
+            { name: "abc 3", url: "http://abc3", recent: false },
+            { name: "abc 4", url: "http://abc4", recent: false },
+            { name: "abc 5", url: "http://abc5", recent: false }
+        ];
+
         setup(function () {
             document.cookie="UQLMockData=enabled";
 
@@ -60,14 +68,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             // so wait to check for updates
             flush(function () {
 
-                var suggestions = [
-                    { name: "abc 1", recent: true },
-                    { name: "abc 2", recent: true },
-                    { name: "abc 3", recent: false },
-                    { name: "abc 4", recent: false },
-                    { name: "abc 5", recent: false }
-                ];
-
                 var inputKeyword = testObj.querySelector('#inputKeyword');
                 var listSuggestions = testObj.querySelector('#listSuggestions');
                 var menuSuggestions = testObj.querySelector('#menuSuggestions');
@@ -88,6 +88,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     expect(items.length).to.be.above(0);
                     expect(menuSuggestions.opened).to.equal(true);
 
+                    done();
+                }, 500);
+            });
+        });
+
+        test('Select autosuggestion - autosuggestion is displayed in input field, selected autosuggestion is set, autosuggestions are closed', function (done) {
+            // Data bindings will stamp out new DOM asynchronously
+            // so wait to check for updates
+            flush(function () {
+
+                var inputKeyword = testObj.querySelector('#inputKeyword');
+                var listSuggestions = testObj.querySelector('#listSuggestions');
+                var menuSuggestions = testObj.querySelector('#menuSuggestions');
+
+                inputKeyword.value = "search";
+                testObj.suggestions = suggestions;
+
+                setTimeout(function(){
+                    expect(listSuggestions).to.not.be.null;
+                    expect(listSuggestions).to.be.visible;
+
+                    var items = listSuggestions.querySelectorAll('paper-item');
+
+                    expect(items.length).to.be.above(0);
+                    items[2].click();
+                    expect(inputKeyword.value).to.equal(suggestions[2].name);
+                    expect(testObj.selectedSuggestion).to.equal(suggestions[2]);
+                    expect(menuSuggestions.opened).to.equal(false);
                     done();
                 }, 500);
             });
