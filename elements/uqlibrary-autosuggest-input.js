@@ -21,6 +21,14 @@
       },
 
       /**
+       * Object field to use for displayed text
+       */
+      itemLabel: {
+        value: 'name',
+        type: String
+      },
+
+      /**
        * Enable autosuggest
        */
       enableAutosuggest: {
@@ -100,7 +108,7 @@
 
     _suggestionSelected: function (e) {
       var selectedSuggestion = this.suggestions[e.detail.selected];
-      this.keyword = selectedSuggestion.name;
+      this.keyword = selectedSuggestion[this.itemLabel];
 
       this._activated(null, selectedSuggestion);
     },
