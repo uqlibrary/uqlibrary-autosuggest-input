@@ -106,6 +106,10 @@
       this.suggestions = [];
     },
 
+    _getItemLabel: function (item) {
+      return item[this.itemLabel];
+    },
+
     _suggestionSelected: function (e) {
       this.selectedSuggestion = this.suggestions[e.detail.selected];
       this.keyword = this.selectedSuggestion[this.itemLabel];

@@ -55,7 +55,7 @@ Example:
       <paper-listbox id="listSuggestions" on-iron-activate="_suggestionSelected" class="dropdown-content"
                      no-auto-focus="true" tabindex="-1" aria-label="Select autosuggested item" role="combobox" title="Select autosuggested item">
         <template is="dom-repeat" items="[[suggestions]]">
-          <paper-item tabindex="-1" class$="[[_recentSearchClass(item.recent)]] " no-auto-focus="true" role="option"> [[item.name]] </paper-item>
+          <paper-item tabindex="-1" class$="[[_recentSearchClass(item.recent)]] " no-auto-focus="true" role="option"> [[_getItemLabel(item)]] </paper-item>
         </template>
       </paper-listbox>
 
