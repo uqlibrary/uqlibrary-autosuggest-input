@@ -78,7 +78,7 @@
     },
 
     _keywordChanged: function(newValue, oldValue) {
-      this.selectedSuggestion = null;
+      // this.selectedSuggestion = null;
       if (!this.enableAutosuggest || this.keyword.length <= 2) {
         this.$.menuSuggestions.close();
       }
@@ -97,20 +97,20 @@
       }, 100);
     },
 
-    _activated: function(e, suggestion) {
+    _activated: function(e) {
       this.$.menuSuggestions.close();
-      if (suggestion && !this.selectedSuggestion) {
-        this.selectedSuggestion = suggestion;
-      }
+      // if (suggestion && !this.selectedSuggestion) {
+      //   this.selectedSuggestion = suggestion;
+      // }
       this.fire('activated', this.selectedSuggestion ? this.selectedSuggestion : this.keyword);
       this.suggestions = [];
     },
 
     _suggestionSelected: function (e) {
-      var selectedSuggestion = this.suggestions[e.detail.selected];
-      this.keyword = selectedSuggestion[this.itemLabel];
+      this.selectedSuggestion = this.suggestions[e.detail.selected];
+      this.keyword = this.selectedSuggestion[this.itemLabel];
 
-      this._activated(null, selectedSuggestion);
+      this._activated();
     },
 
     _selectFirstItem: function (e) {
