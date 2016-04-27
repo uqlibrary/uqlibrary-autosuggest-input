@@ -52,6 +52,14 @@
         value: null
       },
 
+      /**
+       * Disable floating label on input field
+       */
+      noLabelFloat: {
+        type: Object,
+        observer: '_noLabelFloatChanged'
+      },
+
       _inputKeywordTarget: {
         type: Object,
         value: function () {
@@ -147,6 +155,12 @@
      */
     clear: function() {
       this.$.inputKeyword.value = '';
+    },
+
+    _noLabelFloatChanged: function() {
+      this.$.inputKeyword.noLabelFloat=this.noLabelFloat;
+      this.$.menuSuggestions.verticalOffset="33";
+      this.$.menuSuggestions.horizontalOffset="0";
     },
 
     ready: function() {
