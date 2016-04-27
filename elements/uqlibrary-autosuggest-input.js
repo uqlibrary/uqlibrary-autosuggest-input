@@ -159,8 +159,12 @@
 
     _noLabelFloatChanged: function() {
       this.$.inputKeyword.noLabelFloat=this.noLabelFloat;
-      this.$.menuSuggestions.verticalOffset="33";
-      this.$.menuSuggestions.horizontalOffset="0";
+
+      //adjust where suggestions show up when there's no floating label
+      if (this.noLabelFloat) {
+        this.$.menuSuggestions.verticalOffset="33";
+        this.$.menuSuggestions.horizontalOffset="0";
+      }
     },
 
     ready: function() {
