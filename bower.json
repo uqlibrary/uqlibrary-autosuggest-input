@@ -1,6 +1,6 @@
 {
   "name": "uqlibrary-autosuggest-input",
-  "version": "0.0.1",
+  "version": "1.0.4",
   "keywords": [
     "seed",
     "polymer",
@@ -14,7 +14,7 @@
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "uqlibrary-styles": "uqlibrary/uqlibrary-styles#v1.0.0",
-    "uqlibrary-iron-dropdown": "uqlibrary/uqlibrary-iron-dropdown#v1.2.1"
+    "uqlibrary-iron-dropdown": "uqlibrary/uqlibrary-iron-dropdown#v1.2.2"
   },
   "devDependencies": {
     "web-component-tester": "*",
