@@ -72,9 +72,12 @@
         value: function() {
           return this.$.listSuggestions;
         }
+      },
+      _selectedIndex: { // for on-tap and on-iron-activate to work when theres only one item
+        type: Number,
+        value: 0
       }
     },
-
     _keywordFocused: function() {
       this.selectedSuggestion = null;
       if (!this.enableAutosuggest || this.keyword.length <= 2) {
@@ -119,7 +122,7 @@
     },
 
     _suggestionSelected: function (e) {
-      this.selectedSuggestion = this.suggestions[e.target.getAttribute('data-index')];
+      this.selectedSuggestion = this.suggestions[e.detail.selected];
       this.keyword = this.selectedSuggestion[this.itemLabel];
 
       this._activated();
