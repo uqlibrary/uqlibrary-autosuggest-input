@@ -119,7 +119,7 @@
     },
 
     _suggestionSelected: function (e) {
-      this.selectedSuggestion = this.suggestions[e.detail.selected];
+      this.selectedSuggestion = this.suggestions[e.target.getAttribute('data-index')];
       this.keyword = this.selectedSuggestion[this.itemLabel];
 
       this._activated();
