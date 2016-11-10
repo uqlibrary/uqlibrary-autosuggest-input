@@ -118,6 +118,7 @@
     },
 
     _getItemLabel: function (item) {
+      item[this.itemLabel] = item[this.itemLabel].replace(/&amp;/g, '&');
       return item[this.itemLabel];
     },
 
