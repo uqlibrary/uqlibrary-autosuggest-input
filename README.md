@@ -1,5 +1,8 @@
 # uqlibrary-autosuggest-input
 
+[![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input.svg)](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input)
+[![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input?type=dev)
+
 uqlibrary-autosuggest-input is an input field with autosuggest display 
 
 Full documentation can be found at [GitHub Pages](http://uqlibrary.github.io/uqlibrary-autosuggest-input).
