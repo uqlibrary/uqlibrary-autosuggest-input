@@ -18,7 +18,7 @@ BRANCH=${1:-"master"}
 rm -rf "../tmp/$REPO";
 mkdir -p "../tmp/$REPO";
 cd "../tmp";
-git clone -b $BRANCH https://github.com/$ORG/$REPO.git --single-branch
+git clone -b $BRANCH git@github.com:$ORG/$REPO.git --single-branch
 
 # Switch to gh-pages branch
 cd $REPO >/dev/null
