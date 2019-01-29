@@ -1,5 +1,6 @@
 # uqlibrary-autosuggest-input
 
+[![Codeship Status for uqlibrary/uqlibrary-autosuggest-input](https://app.codeship.com/projects/37407a20-064f-0137-bd65-72668c43ff9d/status?branch=master)](https://codeship.com/projects/325633)
 [![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input.svg)](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input)
 [![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-autosuggest-input?type=dev)
 
