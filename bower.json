@@ -7,7 +7,7 @@
     "web-components"
   ],
   "private": true,
-  "main": "uqlibrary-search.html",
+  "main": "elements/uqlibrary-autosuggest-input.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.11.3",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",

@@ -57,14 +57,32 @@ Example:
                  value="{{keyword}}" on-focus="_keywordFocused" on-tap="_keywordFocused">
     </paper-input>
 
-    <uqlibrary-iron-dropdown id="menuSuggestions" no-auto-focus="true"
-                             horizontal-align="left" vertical-align="top" position-absolute="true" title="Select autosuggested item"
-                             horizontal-offset="3" vertical-offset="54" tabindex="-1">
+    <uqlibrary-iron-dropdown 
+      id="menuSuggestions"
+      no-auto-focus="true"
+      horizontal-align="left"
+      vertical-align="top"
+      position-absolute="true"
+      title="Select autosuggested item"
+      horizontal-offset="3"
+      vertical-offset="54"
+      tabindex="-1"
+    >
 
-      <paper-listbox id="listSuggestions" on-iron-activate="_suggestionSelected" class="dropdown-content" selected="{{_selectedIndex}}"
-                     no-auto-focus="true" tabindex="-1" aria-label="Select autosuggested item" title="Select autosuggested item">
+      <paper-listbox 
+        id="listSuggestions"
+        on-iron-activate="_suggestionSelected"
+        class="dropdown-content"
+        selected="{{_selectedIndex}}"
+        no-auto-focus="true"
+        tabindex="-1"
+        aria-label="Select autosuggested item"
+        title="Select autosuggested item"
+      >
         <template is="dom-repeat" items="[[suggestions]]">
-          <paper-item tabindex="-1" class$="[[_recentSearchClass(item.recent)]] " no-auto-focus="true" role="option"> [[_getItemLabel(item)]] </paper-item>
+          <paper-item tabindex="-1" class$="[[_recentSearchClass(item.recent)]] " no-auto-focus="true" role="option">
+            [[_getItemLabel(item)]]
+          </paper-item>
         </template>
       </paper-listbox>
 
